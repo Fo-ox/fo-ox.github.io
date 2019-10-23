@@ -1,2 +1,2 @@
-# NetCracker-project
-home works for the NetCracker company
+# Helga Roganova
+- Домашние задания -
