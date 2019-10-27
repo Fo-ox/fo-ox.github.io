@@ -1,0 +1,344 @@
+/* LESS */
+@border-color : #fff;
+@bg-color : rgba(0,0,0,0.8);
+@import "reset.css";
+
+/* ANIMATE JELLY MIXINS*/
+.animate-brr(@px){
+  -webkit-transform: translateX(@px);
+    transform: translateX(@px);
+}
+.animate-brr-class(){   
+	15% {
+      .animate-brr(9px);
+    }
+    30% {
+      .animate-brr(-9px);
+    }
+    40% {
+      .animate-brr(6px);
+    }
+    50% {
+      .animate-brr(-6px);
+    }
+    65% {
+      .animate-brr(3px);
+    }
+    100% {
+      .animate-brr(0px);
+  }
+}
+
+/* ANIMATE FLY MIXINS*/
+.fly-animate (@x, @y, @r){
+	-webkit-animation: moveX @x linear 0s infinite alternate, 
+	 moveY @y linear 0s infinite alternate, 
+	 rotation @r infinite alternate;
+   -moz-animation: moveX @x linear 0s infinite alternate, 
+     moveY @y linear 0s infinite alternate,
+     rotation @r infinite alternate;
+  -o-animation: moveX @x linear 0s infinite alternate,
+    moveY @y linear 0s infinite alternate,
+    rotation @r infinite alternate;
+  animation: moveX @x linear 0s infinite alternate,
+    moveY @y linear 0s infinite alternate,
+    rotation @r infinite alternate ;
+}
+.left (){
+  from { left : 0; } to { left : ~"calc(100% - 40px)"; }
+}
+.top (){
+  from { top : 0; } to { top : ~"calc(100% - 40px)"; }
+}
+.left-reverce (){
+  from { left: ~"calc(100% - 40px)"; } to { left: 0; }
+}
+.top-reverce (){
+  from { top: ~"calc(100% - 40px)"; } to { top: 0; }
+}
+.fly-left-from (){
+  @-webkit-keyframes moveX {
+    .left();
+  }
+  @-moz-keyframes moveX {
+    .left();
+  }
+  @-o-keyframes moveX {
+    .left();
+  }
+  @keyframes moveX {
+    .left();
+  }
+}
+.fly-top-from (){
+  @-webkit-keyframes moveX {
+    .top();
+  }
+  @-moz-keyframes moveX {
+    .top();
+  }
+  @-o-keyframes moveX {
+    .top();
+  }
+  @keyframes moveX {
+    .top();
+  }
+}
+.fly-left-reverce-from (){
+  @-webkit-keyframes moveX {
+    .left-reverce();
+  }
+  @-moz-keyframes moveX {
+    .left-reverce();
+  }
+  @-o-keyframes moveX {
+    .left-reverce();
+  }
+  @keyframes moveX {
+    .left-reverce();
+  }
+}
+.fly-top-reverce-from (){
+  @-webkit-keyframes moveX {
+    .top-reverce();
+  }
+  @-moz-keyframes moveX {
+    .top-reverce();
+  }
+  @-o-keyframes moveX {
+    .top-reverce();
+  }
+  @keyframes moveX {
+    .top-reverce();
+  }
+}
+
+/* ANIMATE DELAY MIXINS*/
+.delay (@s){
+-webkit-animation-delay: @s;
+-moz-animation-delay: @s;
+-o-animation-delay: @s;
+ animation-delay: @s;
+}
+
+/* ANIMATE ROTATE MIXINS*/
+.rotation (@deg , @moz){
+  0% {
+    -webkit-transform:rotate(@deg);
+    -moz-transform:rotate(@deg);
+    -o-transform:rotate(@moz);
+    transform:rotate(@deg);
+  }
+}
+
+/* END LESS */
+
+/* RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+	height: 100%;
+}
+body {
+	line-height: 1;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a.active.focus,
+a.active:focus,
+a.focus,
+a:active.focus,
+a:active:focus,
+a:focus,
+button.active.focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button:active:focus,
+button:focus,
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+outline: 0!important;
+outline-color: transparent!important;
+outline-width: 0!important;
+outline-style: none!important;
+box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
+}
+/*END RESET*/
+
+/* BODY */
+html{
+  overflow:  hidden;
+  min-width:  300px;
+  body{
+	  background-image: url("http://fo-ox.site/Img/bg.jpg");
+	  background-repeat: no-repeat;
+	  height : 100vh;
+	  background-size: cover;
+	  .jelly {
+	  		&__elem{
+	  			& img{
+                    position: relative;
+  					width : 40px;
+  					height : auto;
+	  			}
+	  			& li{
+                    padding-top: 20px;
+  				    padding-right: 20px;
+	  			}
+	  		}
+            &__tab {
+              display: none;
+              width : 300px;
+              padding-bottom: 20px;
+              color :@border-color;
+              font-family: 'Press Start 2P', cursive;
+              line-height: 18px;
+              font-size: 12px;
+              z-index: 10;
+              background-color: @bg-color;
+              border : 2px solid @border-color;
+              border-radius : 5px;
+        	}
+	  		
+	  		&__tab:after {
+              content: ''; 
+              background-color: @bg-color;
+              border : 2px solid white;
+              border-bottom : 1px solid transparent;
+              border-right : 1px solid transparent;
+              transform: rotate(45deg);
+              position: absolute; 
+              width: 20px; 
+              height: 20px; 
+              left: 30px; 
+              top: -12px;
+              z-index: -20;
+	  		}
+        	&__elem:focus ~ &__tab, 
+			&__elem:active ~ &__tab, 
+            &__tab:hover{
+              display: block;
+              position : absolute;
+              left: calc(50% - 175px);
+              top : calc(50% - 85px);
+			}
+	  	}
+	  	.start{
+        	position: absolute;
+  			left : -40px;
+  			top : -40px;
+	  	}
+	}
+}
+/*END BODY*/
+
+/* ANIMATE JELLY*/
+@-webkit-keyframes swing{
+	.animate-brr-class;
+}
+
+@keyframes swing{
+    .animate-brr-class;
+}
+.animate-brr:hover {
+  -webkit-animation: swing 0.6s ease;
+  animation: swing 0.6s ease;
+   -webkit-animation-iteration-count: 1;
+   animation-iteration-count: 1;
+}
+/* END ANIMATE JELLY*/
+
+/* FLY JELLY*/
+.fly {
+  display: block;
+  position: absolute;
+  .fly-animate (20s, 6.4s, 20s); 
+}
+.fly-left-from;
+.fly-top-from;
+
+.fly-left {
+  display: block;
+  position: absolute;
+  .fly-animate (20s, 6.4s, 20s); 
+}
+.fly-left-reverce-from;
+.fly-top-reverce-from;
+/* END FLY JELLY*/
+
+/* ANIMATE ROTATE*/
+@keyframes rotation {
+  .rotation (0deg , 0deg);
+  .rotation (360deg , 720deg);
+}
+/* END ANIMATE ROTATE*/
+
+/* ANIMATE DELAY*/
+.dela{
+  &y-5s{
+    .delay(5s);
+  }
+  &y-14s{
+    .delay(14s);
+  }
+  &y-20s{
+    .delay(20s);
+  }
+  &y-27s{
+    .delay(27s);
+  }
+   &y-32s{
+    .delay(32s);
+  }
+  &y-42s{
+    .delay(42s);
+  }
+   &y-48s{
+    .delay(48s);
+  }
+  &y-59s{
+    .delay(59s);
+  }
+  &y-60s{
+    .delay(60s);
+  }
+}
+/* END ANIMATE DELAY*/
