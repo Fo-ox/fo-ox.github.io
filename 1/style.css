@@ -79,9 +79,6 @@ body{
   height : 100vh;
   background-size: cover;
 }
-.jelly {
-  display:flex;
-}
 .jelly img{
   position: relative;
   width : 40px;
@@ -109,7 +106,6 @@ body{
   background-color: rgba(0,0,0,0.8);
   border : 2px solid white;
   border-radius : 5px;
-  flex-direction: column;
 }
 
 .jelly__tab::after{
@@ -144,7 +140,6 @@ border-bottom: 7px solid #000;
   position : absolute;
   left: calc(50% - 175px);
   top : calc(50% - 85px);
-  display: flex;
 }
 
 
@@ -313,24 +308,24 @@ transform:rotate(360deg);}
 }
 
 .delay-14s {
--webkit-animation-delay: 14s;
--moz-animation-delay: 14s;
--o-animation-delay: 14s;
- animation-delay: 14s;
+-webkit-animation-delay: 9s;
+-moz-animation-delay: 9s;
+-o-animation-delay: 9s;
+ animation-delay: 9s;
 }
 
 .delay-20s {
--webkit-animation-delay: 20s;
--moz-animation-delay: 20s;
--o-animation-delay: 20s;
- animation-delay: 20s;
+-webkit-animation-delay: 16s;
+-moz-animation-delay: 16s;
+-o-animation-delay: 16s;
+ animation-delay: 16s;
 }
 
 .delay-27s {
--webkit-animation-delay: 27s;
--moz-animation-delay: 27s;
--o-animation-delay: 27s;
- animation-delay: 27s;
+-webkit-animation-delay: 24s;
+-moz-animation-delay: 24s;
+-o-animation-delay: 24s;
+ animation-delay: 24s;
 }
 
 .delay-32s {
