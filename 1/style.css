@@ -8,8 +8,8 @@ b, u, i, center,
 dl, dt, dd,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -19,7 +19,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -79,6 +79,9 @@ body{
   height : 100vh;
   background-size: cover;
 }
+.jelly {
+  display:flex;
+}
 .jelly img{
   position: relative;
   width : 40px;
@@ -106,20 +109,28 @@ body{
   background-color: rgba(0,0,0,0.8);
   border : 2px solid white;
   border-radius : 5px;
+  flex-direction: column;
 }
 
 .jelly__tab::after{
-  content: ''; 
-  background-color: rgb(0,0,0);
-  border : 2px solid white;
-  border-bottom : 1px solid transparent;
-  border-right : 1px solid transparent;
-  transform: rotate(45deg);
-  position: absolute; 
-  width: 20px; height: 20px; 
-  left: 30px; 
-  top: -12px;
-  z-index: -20;
+  content: '';
+  border-left: 10px solid transparent;
+border-right: 10px solid transparent;
+border-bottom: 10px solid #fff;
+  position: absolute;
+  left: 30px;
+  top: -10px;
+}
+
+.jelly__tab::before{
+  content: '';
+  border-left: 7px solid transparent;
+border-right: 7px solid transparent;
+border-bottom: 7px solid #000;
+  position: absolute;
+  left: 33px;
+  top: -7px;
+  z-index : 2;
 }
 
 .jelly__tab li {
@@ -127,12 +138,13 @@ body{
   padding-right: 20px;
 }
 
-.jelly__elem:focus ~ .jelly__tab, 
+.jelly__elem:focus ~ .jelly__tab,
 .jelly__elem:active ~ .jelly__tab, .jelly__tab:hover{
   display: block;
   position : absolute;
   left: calc(50% - 175px);
   top : calc(50% - 85px);
+  display: flex;
 }
 
 
@@ -207,7 +219,7 @@ body{
 
 .fly {
   display: block;
-  
+
   position: absolute;
   -webkit-animation: moveX 27s linear 0s infinite alternate, moveY 6.4s linear 0s infinite alternate, rotation 20s infinite alternate;
   -moz-animation: moveX 27s linear 0s infinite alternate, moveY 6.4s linear 0s infinite alternate, rotation 20s infinite alternate;
@@ -243,7 +255,7 @@ body{
 
 .fly-left {
   display: block;
-  
+
   position: absolute;
   -webkit-animation: moveX-left 24s linear 0s infinite alternate, moveY-left 9.4s linear 0s infinite alternate, rotation 20s infinite alternate;
   -moz-animation: moveX-left 24s linear 0s infinite alternate, moveY-left 9.4s linear 0s infinite alternate, rotation 20s infinite alternate;
@@ -301,24 +313,24 @@ transform:rotate(360deg);}
 }
 
 .delay-14s {
--webkit-animation-delay: 9s;
--moz-animation-delay: 9s;
--o-animation-delay: 9s;
- animation-delay: 9s;
+-webkit-animation-delay: 14s;
+-moz-animation-delay: 14s;
+-o-animation-delay: 14s;
+ animation-delay: 14s;
 }
 
 .delay-20s {
--webkit-animation-delay: 16s;
--moz-animation-delay: 16s;
--o-animation-delay: 16s;
- animation-delay: 16s;
+-webkit-animation-delay: 20s;
+-moz-animation-delay: 20s;
+-o-animation-delay: 20s;
+ animation-delay: 20s;
 }
 
 .delay-27s {
--webkit-animation-delay: 24s;
--moz-animation-delay: 24s;
--o-animation-delay: 24s;
- animation-delay: 24s;
+-webkit-animation-delay: 27s;
+-moz-animation-delay: 27s;
+-o-animation-delay: 27s;
+ animation-delay: 27s;
 }
 
 .delay-32s {
