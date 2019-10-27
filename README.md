@@ -22,5 +22,5 @@
 
 
 
-### Contact me
-[behance](https://www.behance.net/roganova0l482c)[vk](https://vk.com/public_hlg)
+# -
+[behance](https://www.behance.net/roganova0l482c) / [vk](https://vk.com/public_hlg)
