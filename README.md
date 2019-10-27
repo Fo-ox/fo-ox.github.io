@@ -9,4 +9,5 @@
     3. 23/10/19 / [Задание - 5](#) / Реализовать собственную функицю blind();
 
 #
+
 [behance](https://www.behance.net/roganova0l482c) / [vk](https://vk.com/public_hlg)
