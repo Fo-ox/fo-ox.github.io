@@ -1,0 +1,358 @@
+/* RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+	height: 100%;
+}
+body {
+	line-height: 1;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a.active.focus,
+a.active:focus,
+a.focus,
+a:active.focus,
+a:active:focus,
+a:focus,
+button.active.focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button:active:focus,
+button:focus,
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+outline: 0!important;
+outline-color: transparent!important;
+outline-width: 0!important;
+outline-style: none!important;
+box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
+}
+/*END RESET*/
+
+/* JELLY */
+html{
+  overflow:  hidden;
+  min-width:  300px;
+}
+body{
+  background-image: url("http://fo-ox.site/Img/bg.jpg");
+  background-repeat: no-repeat;
+  height : 100vh;
+  background-size: cover;
+}
+.jelly img{
+  position: relative;
+  width : 40px;
+  height : auto;
+}
+
+.start {
+  position: absolute;
+  left : -40px;
+  top : -40px;
+}
+
+/* END JELLY*/
+
+/* TAB */
+.jelly__tab {
+  display: none;
+  width : 300px;
+  padding-bottom: 20px;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  line-height: 18px;
+  font-size: 12px;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.8);
+  border : 2px solid white;
+  border-radius : 5px;
+}
+
+.jelly__tab::after{
+  content: ''; 
+  background-color: rgb(0,0,0);
+  border : 2px solid white;
+  border-bottom : 1px solid transparent;
+  border-right : 1px solid transparent;
+  transform: rotate(45deg);
+  position: absolute; 
+  width: 20px; height: 20px; 
+  left: 30px; 
+  top: -12px;
+  z-index: -20;
+}
+
+.jelly__tab li {
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+.jelly__elem:focus ~ .jelly__tab, 
+.jelly__elem:active ~ .jelly__tab, .jelly__tab:hover{
+  display: block;
+  position : absolute;
+  left: calc(50% - 175px);
+  top : calc(50% - 85px);
+}
+
+
+
+/* END TAB */
+
+/* ANIMATE */
+@-webkit-keyframes swing {
+  15% {
+    -webkit-transform: translateX(9px);
+    transform: translateX(9px);
+  }
+  30% {
+    -webkit-transform: translateX(-9px);
+    transform: translateX(-9px);
+  }
+  40% {
+    -webkit-transform: translateX(6px);
+    transform: translateX(6px);
+  }
+  50% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+  65% {
+    -webkit-transform: translateX(3px);
+    transform: translateX(3px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes swing {
+  15% {
+    -webkit-transform: translateX(9px);
+    transform: translateX(9px);
+  }
+  30% {
+    -webkit-transform: translateX(-9px);
+    transform: translateX(-9px);
+  }
+  40% {
+    -webkit-transform: translateX(6px);
+    transform: translateX(6px);
+  }
+  50% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+  65% {
+    -webkit-transform: translateX(3px);
+    transform: translateX(3px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.animate-brr:hover {
+  -webkit-animation: swing 0.6s ease;
+  animation: swing 0.6s ease;
+   -webkit-animation-iteration-count: 1;
+   animation-iteration-count: 1;
+}
+
+/* END ANIMATE*/
+
+/* ANIMATE BALL*/
+
+.fly {
+  display: block;
+  
+  position: absolute;
+  -webkit-animation: moveX 27s linear 0s infinite alternate, moveY 6.4s linear 0s infinite alternate, rotation 20s infinite alternate;
+  -moz-animation: moveX 27s linear 0s infinite alternate, moveY 6.4s linear 0s infinite alternate, rotation 20s infinite alternate;
+  -o-animation: moveX 27s linear 0s infinite alternate, moveY 6.4s linear 0s infinite alternate, rotation 20s infinite alternate;
+  animation: moveX 27s linear 0s infinite alternate, moveY 6.4s linear 0s infinite alternate, rotation 20s infinite alternate ;
+}
+/* ANIMATE BALL-1*/
+@-webkit-keyframes moveX {
+  from { left: 0; } to { left: calc(100% - 40px); }
+}
+@-moz-keyframes moveX {
+  from { left: 0; } to { left: calc(100% - 40px); }
+}
+@-o-keyframes moveX {
+  from { left: 0; } to { left: calc(100% - 40px); }
+}
+@keyframes moveX {
+  from { left: 0; } to { left: calc(100% - 40px); }
+}
+
+@-webkit-keyframes moveY {
+  from { top: 0; } to { top: calc(100% - 40px); }
+}
+@-moz-keyframes moveY {
+  from { top: 0; } to { top: calc(100% - 40px); }
+}
+@-o-keyframes moveY {
+  from { top: 0; } to { top: calc(100% - 40px); }
+}
+@keyframes moveY {
+  from { top: 0; } to { top: calc(100% - 40px); }
+}
+
+.fly-left {
+  display: block;
+  
+  position: absolute;
+  -webkit-animation: moveX-left 24s linear 0s infinite alternate, moveY-left 9.4s linear 0s infinite alternate, rotation 20s infinite alternate;
+  -moz-animation: moveX-left 24s linear 0s infinite alternate, moveY-left 9.4s linear 0s infinite alternate, rotation 20s infinite alternate;
+  -o-animation: moveX-left 24s linear 0s infinite alternate, moveY-left 9.4s linear 0s infinite alternate, rotation 20s infinite alternate;
+  animation: moveX-left 24s linear 0s infinite alternate, moveY-left 9.4s linear 0s infinite alternate, rotation 20s infinite alternate ;
+}
+/* ANIMATE BALL-LEFT*/
+@-webkit-keyframes moveX-left {
+  from { left: calc(100% - 40px); } to { left: 0; }
+}
+@-moz-keyframes moveX-left {
+  from { left: calc(100% - 40px); } to { left: 0; }
+}
+@-o-keyframes moveX-left {
+  from { left: calc(100% - 40px); } to { left: 0; }
+}
+@keyframes moveX-left {
+  from { left: calc(100% - 40px); } to { left: 0; }
+}
+
+@-webkit-keyframes moveY-left {
+  from { top: calc(100% - 40px); } to { top: 0; }
+}
+@-moz-keyframes moveY-left {
+  from { top: calc(100% - 40px); } to { top: 0; }
+}
+@-o-keyframes moveY-left {
+  from { top: calc(100% - 40px); } to { top: 0; }
+}
+@keyframes moveY-left {
+  from { top: calc(100% - 40px); } to { top: 0; }
+}
+/* END BALL ANIMATE*/
+
+/* ANIMATE ROTATE*/
+@keyframes rotation {
+0% {-webkit-transform:rotate(0deg);
+-moz-transform:rotate(0deg);
+-o-transform:rotate(0deg);
+transform:rotate(0deg);}
+100% {-webkit-transform:rotate(360deg);
+-moz-transform:rotate(720deg);
+-o-transform:rotate(360deg);
+transform:rotate(360deg);}
+}
+
+/* END ANIMATE ROTATE*/
+
+/* DELAY */
+.delay-5s {
+-webkit-animation-delay: 5s;
+-moz-animation-delay: 5s;
+-o-animation-delay: 5s;
+ animation-delay: 5s;
+}
+
+.delay-14s {
+-webkit-animation-delay: 9s;
+-moz-animation-delay: 9s;
+-o-animation-delay: 9s;
+ animation-delay: 9s;
+}
+
+.delay-20s {
+-webkit-animation-delay: 16s;
+-moz-animation-delay: 16s;
+-o-animation-delay: 16s;
+ animation-delay: 16s;
+}
+
+.delay-27s {
+-webkit-animation-delay: 24s;
+-moz-animation-delay: 24s;
+-o-animation-delay: 24s;
+ animation-delay: 24s;
+}
+
+.delay-32s {
+-webkit-animation-delay: 32s;
+-moz-animation-delay: 32s;
+-o-animation-delay: 32s;
+ animation-delay: 32s;
+}
+
+.delay-42s {
+-webkit-animation-delay: 42s;
+-moz-animation-delay: 42s;
+-o-animation-delay: 42s;
+ animation-delay: 42s;
+}
+
+.delay-48s {
+-webkit-animation-delay: 48s;
+-moz-animation-delay: 48s;
+-o-animation-delay: 48s;
+ animation-delay: 48s;
+}
+
+.delay-59s {
+-webkit-animation-delay: 59s;
+-moz-animation-delay: 59s;
+-o-animation-delay: 59s;
+ animation-delay: 59s;
+}
+
+.delay-60s {
+-webkit-animation-delay: 60s;
+-moz-animation-delay: 60s;
+-o-animation-delay: 60s;
+ animation-delay: 60s;
+}
+/* END DELAY */
