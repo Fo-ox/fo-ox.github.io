@@ -8,6 +8,5 @@
     2. 21/10/19 / [Задание - 4](https://fo-ox.github.io) / Создать аккаунт на github и залить туда все проеты
     3. 23/10/19 / [Задание - 5](#) / Реализовать собственную функицю blind();
 
-#
-
+# Contact
 [behance](https://www.behance.net/roganova0l482c) / [vk](https://vk.com/public_hlg)
