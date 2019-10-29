@@ -6,7 +6,8 @@
 2. JavaScript
     1. 16/10/19 / [Задание - 3](https://codepen.io/fo_ox/pen/BaajMNP) / Сделать вывод выпадающего списка в текущем проекте через JS
     2. 21/10/19 / [Задание - 4](https://fo-ox.github.io) / Создать аккаунт на github и залить туда все проеты
-    3. 23/10/19 / [Задание - 5](#) / Реализовать собственную функицю blind();
+    3. 23/10/19 / [Задание - 5](https://codepen.io/fo_ox/pen/NWWareb) / Реализовать собственную функицю bind();
+    4. 28/10/19 / [Задание - 6](#) / Создать объект с getter & setter для одного поля;
 
 # Contact
 [behance](https://www.behance.net/roganova0l482c) / [vk](https://vk.com/public_hlg)
