@@ -8,7 +8,7 @@
     2. 21/10/19 / [Задание - 4](https://fo-ox.github.io) / Создать аккаунт на github и залить туда все проеты
     3. 23/10/19 / [Задание - 5](https://codepen.io/fo_ox/pen/NWWareb) / Реализовать собственную функицю bind();
     4. 28/10/19 / [Задание - 6](https://codepen.io/fo_ox/pen/eYYMvxG) / Создать объект с getter & setter для одного поля;
-    5. 30/10/19 / [Задание - 7](#) / Обернуть какой либо участок кода в конструкцию try, catch & finally
+    5. 30/10/19 / [Задание - 7](https://codepen.io/fo_ox/pen/eYYMvxG) / Обернуть какой либо участок кода в конструкцию try, catch & finally
 
 # Contact
 [behance](https://www.behance.net/roganova0l482c) / [vk](https://vk.com/public_hlg)
