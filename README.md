@@ -10,6 +10,7 @@
     4. 28/10/19 / [Задание - 6](https://codepen.io/fo_ox/pen/eYYMvxG) / Создать объект с getter & setter для одного поля;
     5. 30/10/19 / [Задание - 7](https://codepen.io/fo_ox/pen/eYYMvxG) / Обернуть какой либо участок кода в конструкцию try, catch & finally
     6. 06/11/19 / [Задание - 8](https://codepen.io/fo_ox/pen/zYYLqPE) / Реализация ручного наследования
+    7. 11/11/19 / [Задание - 9](https://codepen.io/fo_ox/pen/QWWVgrv) / Реализация ручного наследования на классах
 
 # Contact
 [behance](https://www.behance.net/roganova0l482c) / [vk](https://vk.com/public_hlg)
