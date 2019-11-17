@@ -11,7 +11,7 @@
     5. 30/10/19 / [Задание - 7](https://codepen.io/fo_ox/pen/eYYMvxG) / Обернуть какой либо участок кода в конструкцию try, catch & finally
     6. 06/11/19 / [Задание - 8](https://codepen.io/fo_ox/pen/zYYLqPE) / Реализация ручного наследования
     7. 11/11/19 / [Задание - 9](https://codepen.io/fo_ox/pen/QWWVgrv) / Реализация ручного наследования на классах
-    8. 13/11/19 / [Задание - 10](https://fo-ox.github.io/10/) / Промисы и асинхронность
+    8. 13/11/19 / [Задание - 10](https://codepen.io/fo_ox/pen/QWWzEXN) / Промисы и асинхронность
 
 # Contact
 [behance](https://www.behance.net/roganova0l482c) / [vk](https://vk.com/public_hlg)
