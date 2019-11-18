@@ -44,7 +44,8 @@ function mamSad() {
 }
 
 //MAIN
-$(document).ready(function() {
+
+function ready () {
   var isMomHappy = true;
   var momAnswer = document.getElementById("answer");
   var option = document.getElementById("selected");
@@ -62,7 +63,9 @@ $(document).ready(function() {
          console.log(mamAnswer);
       }
   });
-});
+}
+
+document.addEventListener("DOMContentLoaded", ready);
 
 
 //askMom();
