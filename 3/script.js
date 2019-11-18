@@ -39,10 +39,14 @@ function listenerCreate(obj , i){
 
 //MAIN
 alert ('Привет! Задавай вопрос предполагающий простой ответ (Да / Нет), и тыкай по бобам - они подскажут что делать с: ');
-var jellyClick = document.querySelectorAll("a.jelly__elem");
-for (let i = 0; i < jellyClick.length; i++){
-  listenerCreate(jellyClick , i)
+function ready (){
+  var jellyClick = document.querySelectorAll("a.jelly__elem");
+  for (let i = 0; i < jellyClick.length; i++){
+    listenerCreate(jellyClick , i)
+  }
 }
+
+document.addEventListener("DOMContentLoaded", ready);
 
 
 
