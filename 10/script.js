@@ -44,22 +44,24 @@ function mamSad() {
 }
 
 //MAIN
-var isMomHappy = true;
-var momAnswer = document.getElementById("answer");
-var option = document.getElementById("selected");
-option.addEventListener("click", function() {
-    if(option.value != "none")
-    {
-       let procent = randomStr() + +option.value;
-       console.log(procent);
-       momAnswer.innerHTML = "Мама думает...";
-       let mamAnswer;
-       if (procent >= 100) {
-         isMomHappy = true;
-       }
-       mamAnswer = askMom();
-       console.log(mamAnswer);
-    }
+$(document).ready(function() {
+  var isMomHappy = true;
+  var momAnswer = document.getElementById("answer");
+  var option = document.getElementById("selected");
+  option.addEventListener("click", function() {
+      if(option.value != "none")
+      {
+         let procent = randomStr() + +option.value;
+         console.log(procent);
+         momAnswer.innerHTML = "Мама думает...";
+         let mamAnswer;
+         if (procent >= 100) {
+           isMomHappy = true;
+         }
+         mamAnswer = askMom();
+         console.log(mamAnswer);
+      }
+  });
 });
 
 
