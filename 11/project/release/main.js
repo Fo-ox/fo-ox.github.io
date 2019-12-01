@@ -13,10 +13,10 @@ function draw() {
         Draw.prototype.GenerateNodeId(startNode.RightChild);
     }
     Draw.prototype.drawRoot(startNode);
+    console.log(tree);
 }
 function deleteTree() {
     tree.deleteTree();
-    console.dir(tree);
     Draw.prototype.ClearDraw();
 }
 function generateTree() {
@@ -27,7 +27,6 @@ function generateTree() {
         numb = random();
         if (!tree.searchNode(numb)) {
             tree.createNode(numb, `узел ${i + 1}`);
-            console.log(i);
         }
         else {
             i--;
