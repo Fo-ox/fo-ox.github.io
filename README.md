@@ -14,7 +14,5 @@
     8. 13/11/19 / [Задание - 10](https://fo-ox.github.io/10/) / Промисы и асинхронность
 3. TypeScript
     1. 25/11/19 / [Задание - 11](https://fo-ox.github.io/11/) / Реализовать бинарное дерево поиска
-
-
 # Contact
 [behance](https://www.behance.net/roganova0l482c) / [vk](https://vk.com/public_hlg)
