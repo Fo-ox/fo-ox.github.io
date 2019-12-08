@@ -13,7 +13,9 @@
     7. 11/11/19 / [Задание - 9](https://codepen.io/fo_ox/pen/QWWVgrv) / Реализация ручного наследования на классах
     8. 13/11/19 / [Задание - 10](https://fo-ox.github.io/10/) / Промисы и асинхронность
 3. TypeScript
-    1. 25/11/19 / [Задание - 11](http://m.fo-ox.site) / Реализовать бинарное дерево поиска
+    1. 25/11/19 / [Задание - 11](http://m.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/11) / Реализовать бинарное дерево поиска
+4. Anjular
+    1. 02/12/19 / [Задание - 12](http://test.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/12) / Реализовать интефейс таблицы через Anjular привязки
 
     
 # Contact

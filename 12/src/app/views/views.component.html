@@ -1,0 +1,73 @@
+<div class="nav">
+  <div class="search">
+    <input placeholder="Поиск студента" (input)="onFind ($event.target.value)" [value]=""/>
+  </div>
+  <div class="panel-right">
+    <div class="point">
+      <select (change)="onChangePoint($event.target.value)">
+        <option>Средний балл</option>
+        <option *ngFor="let point of userPoints" [value]="point">{{point}}</option>
+      </select>
+    </div>
+    <div class="age">
+      <select (change)="onChangeAge($event.target.value)">
+        <option>Возраст</option>
+        <option *ngFor="let age of userAge" [value]=age>{{age}}</option>
+      </select>
+    </div>
+    <div class="button-cover">
+      <div class="button b2" id="button-10">
+        <input type="checkbox" class="checkbox" [(ngModel)]="checkbox1" (change)="redPointOn()">
+        <div class="knobs">
+          <span>OFF</span>
+        </div>
+        <div class="layer"></div>
+      </div>
+    </div>
+    <label>посмотреть <br/>баллы</label>
+  </div>
+</div>
+<table class="table">
+  <thead>
+  <tr class="main">
+    <th>ID<span (click)="sorting('id')"> ▼ </span></th>
+    <th>ФАМИЛИЯ<span (click)="sorting('surname')"> ▼ </span></th>
+    <th>ИМЯ<span (click)="sorting('name')"> ▼ </span></th>
+    <th>ОТЧЕСТВО<span (click)="sorting('patronymic')"> ▼ </span></th>
+    <th>ВОЗРАСТ<span (click)="sorting('age')"> ▼ </span></th>
+    <th>БАЛЛ<span (click)="sorting('points')"> ▼ </span></th>
+    <th>ГРУППА<span (click)="sorting('group')"> ▼ </span></th>
+    <th>КОНТАКТЫ</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let list of currentList" [ngClass]="list.status.findedUser">
+    <td>{{list.id}}</td>
+    <td>{{list.surname}}</td>
+    <td>{{list.name}}</td>
+    <td>{{list.patronymic}}</td>
+    <td>{{2019 - list.date.getFullYear()}}</td>
+    <td *ngIf="checkbox1 && list.status.badPoints" class="red-error">{{list.points}}</td>
+    <td *ngIf="!checkbox1 || !list.status.badPoints">{{list.points}}</td>
+    <td>{{list.group}}</td>
+    <td>
+      <table class="text-right">
+        <tr *ngIf="list.contact.email" class="tr-contact">emai: {{list.contact.email}}</tr>
+        <tr *ngIf="list.contact.phone" class="tr-contact">phone: {{list.contact.phone}}</tr>
+        <tr *ngIf="list.contact.adress" class="tr-contact">adress: {{list.contact.adress}}</tr>
+      </table>
+    </td>
+    <td class="red-error">
+      <button (click)=viewDialogue(list.id) [value]=list.id name="openButton"> X </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<dialog [ngClass]=" (showDialog) ? '' : 'show' ">
+  <div class="dialog">
+    <p class="dialog-text">Вы уверены что хотите удалить пользователя № {{deletedUser}}? <br/><br/> Это действие будет необратимо</p>
+    <button (click)=deleteUser(deletedUser) class="dialog-button">Да</button>
+    <button (click)=showDialogue() class="dialog-button">Закрыть</button>
+  </div>
+</dialog>
