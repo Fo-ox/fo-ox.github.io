@@ -16,9 +16,10 @@ export class ViewsComponent implements OnInit {
   private _currentAge: number;
   private _currentList: TestData;
   private  _currentClass_tr: string;
-  checkbox1: boolean = false;
+  redPointStatus: boolean = false;
   showDialog: boolean = false;
   deletedUser: number = null;
+  activeSort: string = "id";
   constructor (private controlService: ControlService) { }
 
   ngOnInit(): void {
@@ -90,6 +91,7 @@ export class ViewsComponent implements OnInit {
     if (this.currentPoint === null && this.currentAge === null) {
       this.currentList = this.userList;
     }
+    this.activeSort = "id";
   }
 
   onChangeAge(value: string): void {
@@ -98,14 +100,12 @@ export class ViewsComponent implements OnInit {
     if (this.currentPoint === null && this.currentAge === null) {
       this.currentList = this.userList;
     }
+    this.activeSort = "id";
   }
 
   // Включение режима подсветки
   redPointOn(): void {
     this.currentList = this.controlService.badModeOn(this.currentList);
-    if (!this.checkbox1) {
-    } else {
-    }
   }
 
   // Обработка попапа
@@ -132,5 +132,6 @@ export class ViewsComponent implements OnInit {
   // сортировка по выбранному столбцу //
   sorting (value: string): void {
     this.currentList = this.controlService.sortList(this.currentList, value);
+    this.activeSort = value;
   }
 }

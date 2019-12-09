@@ -112,7 +112,7 @@ export class ControlService {
     let j = 0;
     while (list[j]) {
       const user: User = list[j];
-      user.points < 4 ? user.status.badPoints = true : user.status.badPoints = false;
+      user.points <= 3 ? user.status.badPoints = true : user.status.badPoints = false;
       returnArray.push(user);
       j++;
     }
@@ -143,34 +143,37 @@ export class ControlService {
     // ------
     switch (sortType) {
       case "id": {
-        return returnArray.sort((a: User, b: User) => a.id < b.id ? -1 : 1);
+        returnArray.sort((a: User, b: User) => a.id < b.id ? -1 : 1);
         break;
       }
       case "name" : {
-        return returnArray.sort((a: User, b: User) => a.name < b.name ? -1 : 1);
+        returnArray.sort((a: User, b: User) => a.name < b.name ? -1 : 1);
         break;
       }
       case "surname" : {
-        return returnArray.sort((a: User, b: User) => a.surname < b.surname ? -1 : 1);
+        returnArray.sort((a: User, b: User) => a.surname < b.surname ? -1 : 1);
         break;
       }
       case "patronymic" : {
-        return returnArray.sort((a: User, b: User) => a.patronymic < b.patronymic ? -1 : 1);
+        returnArray.sort((a: User, b: User) => a.patronymic < b.patronymic ? -1 : 1);
         break;
       }
       case "age" : {
-        return returnArray.sort((a: User, b: User) => a.date.getFullYear() > b.date.getFullYear() ? -1 : 1);
+        returnArray.sort((a: User, b: User) =>
+        +`${a.date.getFullYear()}${("0" + a.date.getMonth()).slice(-2)}${("0" + a.date.getDate()).slice(-2)}`
+        < +`${b.date.getFullYear()}${("0" + b.date.getMonth()).slice(-2)}${("0" + b.date.getDate()).slice(-2)}` ? -1 : 1);
         break;
       }
       case "points" : {
-        return returnArray.sort((a: User, b: User) => a.points < b.points ? -1 : 1);
+        returnArray.sort((a: User, b: User) => a.points < b.points ? -1 : 1);
         break;
       }
       case  "group" : {
-        return returnArray.sort((a: User, b: User) => a.group < b.group ? -1 : 1);
+        returnArray.sort((a: User, b: User) => a.group < b.group ? -1 : 1);
         break;
       }
     }
+    return returnArray;
     /*const sorted = returnArray.sort((t1, t2) => {
       const name1 = t1.name.toLowerCase();
       const name2 = t2.name.toLowerCase();

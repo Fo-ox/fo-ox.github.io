@@ -28,7 +28,7 @@ select {
 .show {
   display: none;
 }
-dialog {
+.dialog {
   position: absolute;
   left: 0;
   top: 0;
@@ -37,7 +37,7 @@ dialog {
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 2;
 }
-.dialog {
+.dialog-block {
   position: absolute;
   left: calc(50% - 150px);
   top: calc(50% - 100px);
@@ -90,15 +90,15 @@ td {
   font-family: 'Museo Sans Cyrl 500';
   padding-left: 30px;
 }
-th span {
-  color: #bbbbbb;
-}
-th span:hover {
-  color: #5f5fff;
-}
-.table th span {
+.table th button {
   margin-left: 4px;
   margin-right: 40px;
+}
+.table th button:hover {
+  color: #5f5fff;
+}
+.active-sort {
+  color: #5f5fff;
 }
 .flex {
   display: flex;
