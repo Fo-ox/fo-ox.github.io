@@ -1,0 +1,324 @@
+.nav {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.panel-right {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  align-items: center;
+}
+
+.search {
+  padding-left: 20px;
+  background-color: white;
+  border-radius: 100px;
+}
+select {
+  padding-left: 20px;
+  background-color: white;
+  border-radius: 100px;
+  height: 30px;
+}
+.search input{
+  padding-top: 14px;
+  align-items: center;
+}
+.show{
+  display: none;
+}
+.dialog {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 110%;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 2;
+}
+
+.dialog-block {
+  position: absolute;
+  left: calc(50% - 150px);
+  top: calc(50% - 100px);
+  z-index: 2;
+  width: 300px;
+  height: 200px;
+  background-color: white;
+}
+.dialog-block-form {
+  left: calc(50% - 250px);
+  top: 40px;
+  width: 500px;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.dialog-block-form form{
+  margin-top: 30px;
+  width: 400px;
+}
+
+.dialog-block-form input {
+  background-color: #f5f6f7;
+  border-radius: 100px;
+  margin-top: 10px;
+  height: 40px;
+  width: 380px;
+  padding-left: 20px;
+}
+.user-group-and-points__inputs, .user-contact__inputs, .user-send{
+  display: flex;
+  justify-content: space-between;
+}
+.user-group-and-points__text, .user-contact__text, .user-inform__text {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-family: 'Museo Sans Cyrl 300';
+}
+.user-group-and-points input, .user-contact input{
+  width: 170px;
+}
+textarea {
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  width: 360px;
+  height: 50px;
+  background-color: #f5f6f9;
+}
+.dialog-text {
+  text-align: center;
+  width: 200px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.dialog-button {
+  margin-top: 35px;
+  margin-left: 40px;
+  align-items: center;
+  background-color: whitesmoke;
+  height: 40px;
+  width: 90px;
+  border-radius: 100px;
+}
+.dialog-button-form {
+  margin-left: 0;
+  margin-bottom: 30px;
+}
+.dialog-button-add{
+  background-color: #5f5fff;
+  color: white;
+  width: 200px;
+}
+.form-add-popup{
+  display: flex;
+  justify-content: center;
+}
+
+.form-add-button{
+  background-color: #5f5fff;
+  width: 200px;
+  font-size: 16px;
+  color: white;
+  margin-left: 0;
+}
+
+.table{
+  width: 94%;
+  text-align: center;
+  margin: 0 auto;
+}
+.text-right {
+  text-align: left;
+}
+
+tr{
+  font-size: 14px;
+  color: #4e4e4e;
+  height: 40px;
+  padding-top: 40px;
+}
+
+.tr-contact {
+  height: 20px;
+}
+td {
+  vertical-align: middle;
+  padding: 15px;
+  border-bottom: 2px solid #f5f6f9;
+}
+.table th {
+  height: 40px;
+  font-size: 12px;
+  color: #666;
+  font-family: 'Museo Sans Cyrl 500';
+  padding-left: 30px;
+}
+.table th button {
+  margin-left: 4px;
+  margin-right: 40px;
+ }
+
+.table th button:hover {
+  color: #5f5fff;
+}
+.active-sort {
+  color: #5f5fff;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.default {
+  background-color: white;
+}
+.active {
+  background-color: #ebf7fc;
+}
+.red-error {
+  color: #F44336;
+  font-family: 'Museo Sans Cyrl 500';
+}
+
+.redactor {
+  color: #5f5fff;
+}
+
+
+// кнопка-переключатель
+.button-cover, .knobs, .layer
+{
+  width: 80px;
+  height: 40px;
+  margin-left: 30px;
+}
+
+.button
+{
+  position: relative;
+  top: 50%;
+  width: 74px;
+  height: 36px;
+  margin: -20px auto 0 auto;
+  overflow: hidden;
+}
+
+.button.r, .button.r .layer
+{
+  border-radius: 100px;
+}
+
+.button.b2
+{
+  border-radius: 2px;
+}
+
+.checkbox
+{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.knobs
+{
+  z-index: 2;
+}
+
+.layer
+{
+  width: 100%;
+  background-color: #ebf7fc;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+/* Button 10 */
+#button-10 .knobs:before, #button-10 .knobs:after, #button-10 .knobs span
+{
+  position: absolute;
+  top: 4px;
+  width: 20px;
+  height: 10px;
+  font-size: 10px;
+  text-align: center;
+  line-height: 1;
+  padding: 9px 4px;
+  border-radius: 2px;
+  transition: 0.3s ease all;
+}
+
+#button-10 .knobs:before
+{
+  content: '';
+  left: 4px;
+  background-color: #5f5fff;
+}
+
+#button-10 .knobs:after
+{
+  content: 'ON';
+  right: 4px;
+  color: #4e4e4e;
+}
+
+#button-10 .knobs span
+{
+  display: inline-block;
+  left: 4px;
+  color: #fff;
+  z-index: 1;
+}
+
+#button-10 .checkbox:checked + .knobs span
+{
+  color: #4e4e4e;
+}
+
+#button-10 .checkbox:checked + .knobs:before
+{
+  left: 42px;
+  background-color: #F44336;
+}
+
+#button-10 .checkbox:checked + .knobs:after
+{
+  color: #fff;
+}
+
+#button-10 .checkbox:checked ~ .layer
+{
+  background-color: #fcebeb;
+}
+
+
+//VALIDATORS
+.invalid-button {
+  background-color: #F44336;
+  color: white;
+  text-decoration: line-through;
+}
+
+.dialog-block-form input.ng-invalid.ng-touched {
+  color: #F44336;
+  border: 1px solid #F44336;
+}
+
+.error-message {
+  font-size: 10px;
+  color: #F44336;
+}
