@@ -184,7 +184,7 @@ export class ControlService {
     const userDate = new Date(`${date.value}`);
     if (userDate) {
       if (+`${currentDate.getFullYear()}${("0" + currentDate.getMonth()).slice(-2)}${("0" + currentDate.getDate()).slice(-2)}`
-        - +`${userDate.getFullYear()}${("0" + userDate.getMonth()).slice(-2)}${("0" + userDate.getDate()).slice(-2)}` > 100000) {
+        - +`${userDate.getFullYear()}${("0" + userDate.getMonth()).slice(-2)}${("0" + userDate.getDate()).slice(-2)}` < 100000) {
         return {"dateValid": true};
       }
     } if (userDate.toDateString() === "Invalid Date") {

@@ -139,7 +139,7 @@
         class="error-message"
         *ngIf ="formsAddUser.get('date').invalid && formsAddUser.get('date').errors && formsAddUser.get('date').touched"
       > <small *ngIf ="formsAddUser.get('date').errors.required">Поле не может быть пустым!</small>
-        <small *ngIf ="formsAddUser.get('date').errors.dateValid">Дата рождения не может иметь значение дальше чем на 10 лет от текущей даты </small>
+        <small *ngIf ="formsAddUser.get('date').errors.dateValid">Возраст пользователя дожен быть не менее 10 лет! </small>
         <small *ngIf ="formsAddUser.get('date').errors.dateFormat && !formsAddUser.get('date').errors.required">Некорректный формат даты! ГГГГ-ММ-ДД</small>
       </div>
       <div class="user-group-and-points" formGroupName="property">
