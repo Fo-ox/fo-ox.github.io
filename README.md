@@ -16,6 +16,7 @@
     1. 25/11/19 / [Задание - 11](http://m.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/11) / Реализовать бинарное дерево поиска
 4. Anjular
     1. 02/12/19 / [Задание - 12](http://test.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/12) / Реализовать интефейс таблицы через Anjular привязки
+    2. 04/12/19 / [Задание - 13](http://test.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/13) / Реализовать формы с валидацией для добавления и реадктирования пользователей
 
     
 # Contact
