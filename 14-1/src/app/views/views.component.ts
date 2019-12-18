@@ -1,0 +1,185 @@
+import { Component, OnInit, Output } from "@angular/core";
+import { ControlService } from "../controller/control.service";
+import { TestData } from "../data/test-data";
+
+@Component({
+  selector: "app-views",
+  templateUrl: "./views.component.html",
+  styleUrls: ["./views.component.less"]
+})
+
+export class ViewsComponent implements OnInit {
+
+  @Output () private _currentList: TestData;
+  @Output () private _userList: TestData;
+  @Output () private _userPoints: object;
+  @Output () private _userAge: object;
+  @Output () private _currentUserId: number;
+  private _currentPoint: number;
+  private _currentAge: number;
+  private _currentClass_tr: string;
+  redPointStatus: boolean = false;
+  showDialog: boolean = false;
+  deletedUser: number = null;
+  activeSort: string = "id";
+
+  constructor(private controlService: ControlService) {}
+
+  ngOnInit(): void {
+
+    this.currentList = this.userList = this.controlService.getAllUserList();
+    this.userPoints = this.controlService.uniquePoinst(this.userList);
+    this.userAge = this.controlService.uniqueAge(this.userList);
+    this.currentPoint = null;
+    this.currentAge = null;
+    this.currentClass_tr = null;
+    this.currentUserId = null;
+  }
+
+  get userList(): TestData {
+    return this._userList;
+  }
+
+  set userList(list: TestData) {
+    this._userList = list;
+  }
+
+  get currentList(): TestData {
+    return this._currentList;
+  }
+
+  set currentList(list: TestData) {
+    this._currentList = list;
+  }
+
+  get userPoints(): TestData {
+    return this._userPoints;
+  }
+
+  set userPoints(list: TestData) {
+    this._userPoints = list;
+  }
+
+  get userAge(): TestData {
+    return this._userAge;
+  }
+
+  set userAge(list: TestData) {
+    this._userAge = list;
+  }
+
+  get currentPoint(): number {
+    return this._currentPoint;
+  }
+
+  set currentPoint(point: number) {
+    this._currentPoint = point;
+  }
+
+  get currentAge(): number {
+    return this._currentAge;
+  }
+
+  set currentAge(age: number) {
+    this._currentAge = age;
+  }
+
+  get currentClass_tr(): string {
+    return this._currentClass_tr;
+  }
+
+  set currentClass_tr(cl: string) {
+    this._currentClass_tr = cl;
+  }
+
+  get currentUserId(): number {
+    return this._currentUserId;
+  }
+
+  set currentUserId(value: number) {
+    this._currentUserId = value;
+  }
+
+  // расскраска найденных юзеров
+  onFind(value: string): void {
+    this.controlService.searchNameOrFamily(this.currentList, value);
+  }
+
+  // событие выбора
+  onChangePoint(value: string): void {
+    value === "Средний балл" ? this.currentPoint = null : this.currentPoint = +value;
+    this.currentList = this.controlService.filterStudent(this.userList, this.currentPoint, this.currentAge);
+    if (this.currentPoint === null && this.currentAge === null) {
+      this.currentList = this.userList;
+    }
+    this.activeSort = "id";
+  }
+
+  onChangeAge(value: string): void {
+    value === "Возраст" ? this.currentAge = null : this.currentAge = +value;
+    this.currentList = this.controlService.filterStudent(this.userList, this.currentPoint, this.currentAge);
+    if (this.currentPoint === null && this.currentAge === null) {
+      this.currentList = this.userList;
+    }
+    this.activeSort = "id";
+  }
+
+  // Включение режима подсветки
+  redPointOn(): void {
+    this.currentList = this.controlService.badModeOn(this.currentList);
+  }
+
+  // Обработка попапа
+  viewDialogue(value: number): void {
+    this.showDialog = true;
+    this.deletedUser = value;
+  }
+
+  showDialogue(): void {
+    this.showDialog = false;
+    this.deletedUser = null;
+  }
+
+  deleteUser(value: number): void {
+    this.userList = this.controlService.detele(this.userList, value);
+    this.currentList = this.userList;
+    this.userAge = this.controlService.uniqueAge(this.userList);
+    this.userPoints = this.controlService.uniquePoinst(this.userList);
+    if (this.currentPoint) {
+      this.onChangePoint(`${this.currentPoint}`);
+    }
+    if (this.currentAge) {
+      this.onChangeAge(`${this.currentAge}`);
+    }
+    this.showDialogue();
+  }
+
+  // сортировка по выбранному столбцу //
+  sorting(value: string): void {
+    this.currentList = this.controlService.sortList(this.currentList, value);
+    this.activeSort = value;
+  }
+  // получение новых данных из компоненты ребенка
+  currentListChange(count: TestData): void {
+    this.currentList = count;
+  }
+  userListChange(count: TestData): void {
+    this.userList = count;
+  }
+  userAgeChange(count: object): void {
+    this.userAge = count;
+    if (this.currentAge) {
+      this.onChangeAge(`${this.currentAge}`);
+    }
+  }
+  userPointsChange(count: object): void {
+    this.userPoints = count;
+    if (this.currentPoint) {
+      this.onChangePoint(`${this.currentPoint}`);
+    }
+  }
+  currentUserIdChange(count: number): void {
+    this.currentUserId = count;
+  }
+}
+
