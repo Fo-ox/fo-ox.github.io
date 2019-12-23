@@ -358,6 +358,7 @@ AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: "app-root",
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html")).default,
+        changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectionStrategy"].OnPush,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./app.component.less */ "./src/app/app.component.less")).default]
     })
 ], AppComponent);
@@ -1195,6 +1196,7 @@ UserAddAndUpdateFormsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: "app-user-add-and-update-forms",
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./user-add-and-update-forms.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views-user-table/user-add-and-update-forms/user-add-and-update-forms.component.html")).default,
+        changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectionStrategy"].OnPush,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./user-add-and-update-forms.component.less */ "./src/app/views-user-table/user-add-and-update-forms/user-add-and-update-forms.component.less")).default]
     })
 ], UserAddAndUpdateFormsComponent);

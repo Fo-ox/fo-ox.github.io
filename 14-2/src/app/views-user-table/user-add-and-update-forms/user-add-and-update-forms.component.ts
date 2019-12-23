@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { TestData } from "../../data/test-data";
 import { ControlService } from "../../service/control.service";
@@ -6,7 +6,8 @@ import { ControlService } from "../../service/control.service";
 @Component({
   selector: "app-user-add-and-update-forms",
   templateUrl: "./user-add-and-update-forms.component.html",
-  styleUrls: ["./user-add-and-update-forms.component.less"]
+  styleUrls: ["./user-add-and-update-forms.component.less"],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserAddAndUpdateFormsComponent implements OnInit {
 
