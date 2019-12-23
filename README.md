@@ -17,7 +17,8 @@
 4. Anjular
     1. 02/12/19 / [Задание - 12](http://test.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/12) / Реализовать интефейс таблицы через Anjular привязки
     2. 04/12/19 / [Задание - 13](http://test.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/13) / Реализовать формы с валидацией для добавления и реадктирования пользователей
-    2. 09/12/19 / [Задание - 14.1](http://test.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/14-1) / разбить проект на компоненты использую Input и Output
+    3. 09/12/19 / [Задание - 14.1](http://test.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/14-1) / разбить проект на компоненты использую Input и Output
+    4. 09/12/19 / [Задание - 14.2](http://test.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/14-2) / Реализовать @Directive, реализовать @Pipe, сделать все компоненты onPush, выделить хотя бы 1 функциональный модуль
 
     
 # Contact

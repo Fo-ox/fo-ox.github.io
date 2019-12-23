@@ -1,0 +1,107 @@
+<div class="nav">
+  <div class="search">
+    <input placeholder="Поиск студента" (input)="onFind ($event.target.value)"/>
+  </div>
+  <div class="panel-right">
+    <div class="point">
+      <select (change)="onChangePoint($event.target.value)">
+        <option>Средний балл</option>
+        <option *ngFor="let point of userPoints" [value]="point">{{point}}</option>
+      </select>
+    </div>
+    <div class="age">
+      <select (change)="onChangeAge($event.target.value)">
+        <option>Возраст</option>
+        <option *ngFor="let age of userAge" [value]=age>{{age}}</option>
+      </select>
+    </div>
+    <div class="button-cover">
+      <div class="button b2" id="button-10">
+        <input type="checkbox" class="checkbox" [(ngModel)]="redPointStatus" (change)="redPointOn()">
+        <div class="knobs">
+          <span>OFF</span>
+        </div>
+        <div class="layer"></div>
+      </div>
+    </div>
+    <label>посмотреть <br/>баллы</label>
+  </div>
+</div>
+<table class="table">
+  <thead>
+  <tr class="main">
+    <th>ID
+      <button (click)="sorting('id')" [ngClass]=" (activeSort === 'id') ? 'active-sort' : '' "> ▼</button>
+    </th>
+    <th>ФАМИЛИЯ
+      <button (click)="sorting('surname')" [ngClass]=" (activeSort === 'surname') ? 'active-sort' : '' "> ▼</button>
+    </th>
+    <th>ИМЯ
+      <button (click)="sorting('name')" [ngClass]=" (activeSort === 'name') ? 'active-sort' : '' "> ▼</button>
+    </th>
+    <th>ОТЧЕСТВО
+      <button (click)="sorting('patronymic')" [ngClass]=" (activeSort === 'patronymic') ? 'active-sort' : '' "> ▼
+      </button>
+    </th>
+    <th>ВОЗРАСТ
+      <button (click)="sorting('age')" [ngClass]=" (activeSort === 'age') ? 'active-sort' : '' "> ▼</button>
+    </th>
+    <th>БАЛЛ
+      <button (click)="sorting('points')" [ngClass]=" (activeSort === 'points') ? 'active-sort' : '' "> ▼</button>
+    </th>
+    <th>ГРУППА
+      <button (click)="sorting('group')" [ngClass]=" (activeSort === 'group') ? 'active-sort' : '' "> ▼</button>
+    </th>
+    <th>КОНТАКТЫ</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let list of currentList" [ngClass]="list.status.findedUser">
+    <td>{{list.id}}</td>
+    <td>{{list.surname}}</td>
+    <td>{{list.name}}</td>
+    <td>{{list.patronymic}}</td>
+    <td>{{list.date.getFullYear()}}-{{("0" + (+list.date.getMonth() + 1)).slice(-2)}}-{{( "0" + list.date.getDate()).slice(-2)}}</td>
+    <td *ngIf="redPointStatus && list.status.badPoints" class="red-error">{{list.points}}</td>
+    <td *ngIf="!redPointStatus || !list.status.badPoints">{{list.points}}</td>
+    <td>{{list.group}}</td>
+    <td>
+      <table class="text-right">
+        <tr *ngIf="list.contact.email" class="tr-contact">emai: {{list.contact.email}}</tr>
+        <tr *ngIf="list.contact.phone" class="tr-contact">phone: {{list.contact.phone}}</tr>
+        <tr *ngIf="list.contact.adress" class="tr-contact">adress: {{list.contact.adress}}</tr>
+      </table>
+    </td>
+    <td class="redactor">
+      <button (click)="ChildMethod.ViewDialogFormUpdate(list.id, currentList)" [value]=list.id name="openButton" > ✎ </button>
+    </td>
+    <td class="red-error">
+      <button (click)=viewDialogue(list.id) [value]=list.id name="openButton"> X</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div [ngClass]=" (showDialog) ? 'dialog' : 'dialog show' ">
+  <div class="dialog-block">
+    <p class="dialog-text">Вы уверены что хотите удалить пользователя № {{deletedUser}}? <br/><br/> Это действие будет
+      необратимо</p>
+    <button (click)=deleteUser(deletedUser) class="dialog-button dialog-add-button">Да</button>
+    <button (click)=showDialogue() class="dialog-button">Закрыть</button>
+  </div>
+</div>
+<app-forms
+  [userlist]="userlist"
+  [userpoints] ="userpoints"
+  [userage] ="userage"
+  [userpoints]="userpoints"
+  [currentuserId]="currentuserId"
+  (currentListChange)="currentListChange($event)"
+  (userListChange)="userListChange($event)"
+  (userAgeChange)="userAgeChange($event)"
+  (userPointsChange)="userPointsChange($event)"
+  (currentUserIdChange)="currentUserIdChange($event)"
+  #ChildMethod
+></app-forms>
