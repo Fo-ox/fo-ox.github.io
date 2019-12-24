@@ -50,7 +50,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"nav\">\n  <div class=\"search\">\n    <input placeholder=\"Поиск студента\" (input)=\"onFind ($event.target.value)\"/>\n  </div>\n  <div class=\"panel-right\">\n    <div class=\"point\">\n      <select (change)=\"onChangePoint($event.target.value)\">\n        <option>Средний балл</option>\n        <option *ngFor=\"let point of userPoints\" [value]=\"point\">{{point}}</option>\n      </select>\n    </div>\n    <div class=\"age\">\n      <select (change)=\"onChangeAge($event.target.value)\">\n        <option>Возраст</option>\n        <option *ngFor=\"let age of userAge\" [value]=age>{{age}}</option>\n      </select>\n    </div>\n    <div class=\"button-cover\">\n      <div class=\"button b2\" id=\"button-10\">\n        <input type=\"checkbox\" class=\"checkbox\" [(ngModel)]=\"redPointStatus\" (change)=\"redPointOn()\">\n        <div class=\"knobs\">\n          <span>OFF</span>\n        </div>\n        <div class=\"layer\"></div>\n      </div>\n    </div>\n    <label>посмотреть <br/>баллы</label>\n  </div>\n</div>\n<table class=\"table\">\n  <thead>\n  <tr class=\"main\">\n    <th>ID\n      <button (click)=\"sorting('id')\" [ngClass]=\" (activeSort === 'id') ? 'active-sort' : '' \"> ▼</button>\n    </th>\n    <th>ФАМИЛИЯ\n      <button (click)=\"sorting('surname')\" [ngClass]=\" (activeSort === 'surname') ? 'active-sort' : '' \"> ▼</button>\n    </th>\n    <th>ИМЯ\n      <button (click)=\"sorting('name')\" [ngClass]=\" (activeSort === 'name') ? 'active-sort' : '' \"> ▼</button>\n    </th>\n    <th>ОТЧЕСТВО\n      <button (click)=\"sorting('patronymic')\" [ngClass]=\" (activeSort === 'patronymic') ? 'active-sort' : '' \"> ▼\n      </button>\n    </th>\n    <th>ВОЗРАСТ\n      <button (click)=\"sorting('age')\" [ngClass]=\" (activeSort === 'age') ? 'active-sort' : '' \"> ▼</button>\n    </th>\n    <th>БАЛЛ\n      <button (click)=\"sorting('points')\" [ngClass]=\" (activeSort === 'points') ? 'active-sort' : '' \"> ▼</button>\n    </th>\n    <th>ГРУППА\n      <button (click)=\"sorting('group')\" [ngClass]=\" (activeSort === 'group') ? 'active-sort' : '' \"> ▼</button>\n    </th>\n    <th>КОНТАКТЫ</th>\n    <th> </th>\n    <th> </th>\n  </tr>\n  </thead>\n  <tbody>\n  <tr *ngFor=\"let list of currentList\" [ngClass]=\"list.status.findedUser\">\n    <td appComment>{{list.id}}</td>\n    <td appComment>{{list.surname}}</td>\n    <td appComment>{{list.name}}</td>\n    <td appComment>{{list.patronymic}}</td>\n    <td>{{list.date | dateAndAge}}</td>\n    <td *ngIf=\"redPointStatus && list.status.badPoints\" class=\"red-error\">{{list.points}}</td>\n    <td *ngIf=\"!redPointStatus || !list.status.badPoints\">{{list.points}}</td>\n    <td>{{list.group}}</td>\n    <td>\n      <table class=\"text-right\">\n        <tr *ngIf=\"list.contact.email\" class=\"tr-contact\">emai: {{list.contact.email}}</tr>\n        <tr *ngIf=\"list.contact.phone\" class=\"tr-contact\">phone: {{list.contact.phone}}</tr>\n        <tr *ngIf=\"list.contact.adress\" class=\"tr-contact\">adress: {{list.contact.adress}}</tr>\n      </table>\n    </td>\n    <td class=\"redactor\">\n      <button (click)=\"ChildMethod.ViewDialogFormUpdate(list.id, currentList)\" [value]=list.id name=\"openButton\" > ✎ </button>\n    </td>\n    <td class=\"red-error\">\n      <button (click)=viewDialogue(list.id) [value]=list.id name=\"openButton\"> X</button>\n    </td>\n  </tr>\n  </tbody>\n</table>\n\n<div [ngClass]=\" (showDialog) ? 'dialog' : 'dialog show' \">\n  <div class=\"dialog-block\">\n    <p class=\"dialog-text\">Вы уверены что хотите удалить пользователя № {{deletedUser}}? <br/><br/> Это действие будет\n      необратимо</p>\n    <button (click)=deleteUser(deletedUser) class=\"dialog-button dialog-add-button\">Да</button>\n    <button (click)=showDialogue() class=\"dialog-button\">Закрыть</button>\n  </div>\n</div>\n<app-user-add-and-update-forms\n  [userlist]=\"userlist\"\n  [userpoints] =\"userpoints\"\n  [userage] =\"userage\"\n  [userpoints]=\"userpoints\"\n  [currentuserId]=\"currentuserId\"\n  [activeSort]=\"activeSort\"\n  (currentListChange)=\"currentListChange($event)\"\n  (userListChange)=\"userListChange($event)\"\n  (userAgeChange)=\"userAgeChange($event)\"\n  (userPointsChange)=\"userPointsChange($event)\"\n  (currentUserIdChange)=\"currentUserIdChange($event)\"\n  (activeSortChange)=\"activeSortChange($event)\"\n  #ChildMethod\n></app-user-add-and-update-forms>\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"nav\">\n  <div class=\"search\">\n    <input placeholder=\"Поиск студента\" (input)=\"onFind ($event.target.value)\"/>\n  </div>\n  <div class=\"panel-right\">\n    <div class=\"point\">\n      <select (change)=\"onChangePoint($event.target.value)\">\n        <option>Средний балл</option>\n        <option *ngFor=\"let point of userPoints\" [value]=\"point\">{{point}}</option>\n      </select>\n    </div>\n    <div class=\"age\">\n      <select (change)=\"onChangeAge($event.target.value)\">\n        <option>Возраст</option>\n        <option *ngFor=\"let age of userAge\" [value]=age>{{age}}</option>\n      </select>\n    </div>\n    <div class=\"button-cover\">\n      <div class=\"button b2\" id=\"button-10\">\n        <input type=\"checkbox\" class=\"checkbox\" [(ngModel)]=\"redPointStatus\" (change)=\"redPointOn()\">\n        <div class=\"knobs\">\n          <span>OFF</span>\n        </div>\n        <div class=\"layer\"></div>\n      </div>\n    </div>\n    <label>посмотреть <br/>баллы</label>\n  </div>\n</div>\n<table class=\"table\">\n  <thead>\n  <tr class=\"main\">\n    <th>ID\n      <button (click)=\"sorting('id')\" [ngClass]=\" (activeSort === 'id') ? 'active-sort' : '' \"> ▼</button>\n    </th>\n    <th>ФАМИЛИЯ\n      <button (click)=\"sorting('surname')\" [ngClass]=\" (activeSort === 'surname') ? 'active-sort' : '' \"> ▼</button>\n    </th>\n    <th>ИМЯ\n      <button (click)=\"sorting('name')\" [ngClass]=\" (activeSort === 'name') ? 'active-sort' : '' \"> ▼</button>\n    </th>\n    <th>ОТЧЕСТВО\n      <button (click)=\"sorting('patronymic')\" [ngClass]=\" (activeSort === 'patronymic') ? 'active-sort' : '' \"> ▼\n      </button>\n    </th>\n    <th>ВОЗРАСТ\n      <button (click)=\"sorting('age')\" [ngClass]=\" (activeSort === 'age') ? 'active-sort' : '' \"> ▼</button>\n    </th>\n    <th>БАЛЛ\n      <button (click)=\"sorting('points')\" [ngClass]=\" (activeSort === 'points') ? 'active-sort' : '' \"> ▼</button>\n    </th>\n    <th>ГРУППА\n      <button (click)=\"sorting('group')\" [ngClass]=\" (activeSort === 'group') ? 'active-sort' : '' \"> ▼</button>\n    </th>\n    <th>КОНТАКТЫ</th>\n    <th> </th>\n    <th> </th>\n  </tr>\n  </thead>\n  <tbody>\n  <tr *ngFor=\"let list of currentList\" [ngClass]=\"list.status.findedUser\">\n    <td appComment>{{list.id}}</td>\n    <td appComment>{{list.surname}}</td>\n    <td appComment>{{list.name}}</td>\n    <td appComment>{{list.patronymic}}</td>\n    <td>{{list.date | dateAndAge}}</td>\n    <td *ngIf=\"redPointStatus && list.status.badPoints\" class=\"red-error\">{{list.points}}</td>\n    <td *ngIf=\"!redPointStatus || !list.status.badPoints\">{{list.points}}</td>\n    <td>{{list.group}}</td>\n    <td>\n      <table class=\"text-right\">\n        <tr *ngIf=\"list.contact.email\" class=\"tr-contact\">emai: {{list.contact.email}}</tr>\n        <tr *ngIf=\"list.contact.phone\" class=\"tr-contact\">phone: {{list.contact.phone}}</tr>\n        <tr *ngIf=\"list.contact.adress\" class=\"tr-contact\">adress: {{list.contact.adress}}</tr>\n      </table>\n    </td>\n    <td class=\"redactor\">\n      <button (click)=\"ChildMethod.ViewDialogFormUpdate(list.id, currentList)\" [value]=list.id name=\"openButton\" > ✎ </button>\n    </td>\n    <td class=\"red-error\">\n      <button (click)=viewDialogue(list.id) [value]=list.id name=\"openButton\"> X</button>\n    </td>\n  </tr>\n  </tbody>\n</table>\n\n<div [ngClass]=\" (showDialog) ? 'dialog' : 'dialog show' \">\n  <div class=\"dialog-block\">\n    <p class=\"dialog-text\">Вы уверены что хотите удалить пользователя № {{deletedUser}}? <br/><br/> Это действие будет\n      необратимо</p>\n    <button (click)=deleteUser(deletedUser) class=\"dialog-button dialog-add-button\">Да</button>\n    <button (click)=showDialogue() class=\"dialog-button\">Закрыть</button>\n  </div>\n</div>\n<app-user-add-and-update-forms\n  [userlist]=\"userlist\"\n  [userpoints] =\"userpoints\"\n  [userage] =\"userage\"\n  [userpoints]=\"userpoints\"\n  [currentuserId]=\"currentuserId\"\n  (outputs)=\"outputsEmitterEvent($event)\"\n  #ChildMethod\n></app-user-add-and-update-forms>\n");
             /***/ 
         }),
         /***/ "./node_modules/tslib/tslib.es6.js": 
@@ -1094,6 +1094,78 @@
             ], ControlService);
             /***/ 
         }),
+        /***/ "./src/app/views-user-table/user-add-and-update-forms/output-user-add-and-update-forms.component.ts": 
+        /*!**********************************************************************************************************!*\
+          !*** ./src/app/views-user-table/user-add-and-update-forms/output-user-add-and-update-forms.component.ts ***!
+          \**********************************************************************************************************/
+        /*! exports provided: OutputUserAddAndUpdateFormsComponent */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OutputUserAddAndUpdateFormsComponent", function () { return OutputUserAddAndUpdateFormsComponent; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            var OutputUserAddAndUpdateFormsComponent = /** @class */ (function () {
+                function OutputUserAddAndUpdateFormsComponent() {
+                    this.currentListChange = null;
+                    this.userListChange = null;
+                    this.userAgeChange = null;
+                    this.userPointsChange = null;
+                    this.currentUserIdChange = null;
+                }
+                Object.defineProperty(OutputUserAddAndUpdateFormsComponent.prototype, "currentListChange", {
+                    get: function () {
+                        return this._currentListChange;
+                    },
+                    set: function (value) {
+                        this._currentListChange = value;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(OutputUserAddAndUpdateFormsComponent.prototype, "userListChange", {
+                    get: function () {
+                        return this._userListChange;
+                    },
+                    set: function (value) {
+                        this._userListChange = value;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(OutputUserAddAndUpdateFormsComponent.prototype, "userAgeChange", {
+                    get: function () {
+                        return this._userAgeChange;
+                    },
+                    set: function (value) {
+                        this._userAgeChange = value;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(OutputUserAddAndUpdateFormsComponent.prototype, "userPointsChange", {
+                    get: function () {
+                        return this._userPointsChange;
+                    },
+                    set: function (value) {
+                        this._userPointsChange = value;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(OutputUserAddAndUpdateFormsComponent.prototype, "currentUserIdChange", {
+                    get: function () {
+                        return this._currentUserIdChange;
+                    },
+                    set: function (value) {
+                        this._currentUserIdChange = value;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                return OutputUserAddAndUpdateFormsComponent;
+            }());
+            /***/ 
+        }),
         /***/ "./src/app/views-user-table/user-add-and-update-forms/user-add-and-update-forms.component.less": 
         /*!*****************************************************************************************************!*\
           !*** ./src/app/views-user-table/user-add-and-update-forms/user-add-and-update-forms.component.less ***!
@@ -1118,16 +1190,13 @@
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
             /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
             /* harmony import */ var _service_control_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../service/control.service */ "./src/app/service/control.service.ts");
+            /* harmony import */ var _output_user_add_and_update_forms_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./output-user-add-and-update-forms.component */ "./src/app/views-user-table/user-add-and-update-forms/output-user-add-and-update-forms.component.ts");
             var UserAddAndUpdateFormsComponent = /** @class */ (function () {
                 function UserAddAndUpdateFormsComponent(controlService) {
                     this.controlService = controlService;
                     this.showDialogForm = false;
-                    this.currentListChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-                    this.userListChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-                    this.userAgeChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-                    this.userPointsChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-                    this.currentUserIdChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-                    this.activeSortChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+                    this.outputsDate = new _output_user_add_and_update_forms_component__WEBPACK_IMPORTED_MODULE_4__["OutputUserAddAndUpdateFormsComponent"]();
+                    this.outputs = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
                 }
                 UserAddAndUpdateFormsComponent.prototype.ngOnInit = function () {
                     this.formsAddUser = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
@@ -1215,14 +1284,14 @@
                     this.userAge = this.controlService.uniqueAge(this.userList);
                     this.userPoints = this.controlService.uniquePoinst(this.userList);
                     this.showDialogueForm();
-                    this.currentListChange.emit(this.currentList);
-                    this.userListChange.emit(this.userList);
-                    this.userAgeChange.emit(this.userAge);
-                    this.userPointsChange.emit(this.userPoints);
-                    this.activeSort = "id";
-                    this.activeSortChange.emit(this.activeSort);
+                    this.outputsDate.currentListChange = this.currentList;
+                    this.outputsDate.userListChange = this.userList;
+                    this.outputsDate.userAgeChange = this.userAge;
+                    this.outputsDate.userPointsChange = this.userPoints;
+                    this.outputs.emit(this.outputsDate);
                 };
                 UserAddAndUpdateFormsComponent.prototype.ViewDialogFormUpdate = function (value, GoList) {
+                    console.log(value);
                     this.currentList = GoList;
                     var currentUser = this.controlService.searchId(this.currentList, value);
                     this.formsAddUser.get("profiles").get("name").setValue(currentUser.name);
@@ -1235,9 +1304,8 @@
                     this.formsAddUser.get("contact").get("email").setValue(currentUser.contact.email);
                     this.formsAddUser.get("contact").get("adres").setValue(currentUser.contact.adress);
                     this.currentUserId = value;
-                    this.currentUserIdChange.emit(this.currentUserId);
-                    this.activeSort = "id";
-                    this.activeSortChange.emit(this.activeSort);
+                    this.outputsDate.currentUserIdChange = value;
+                    this.outputs.emit(this.outputsDate);
                     this.showDialogForm = true;
                 };
                 return UserAddAndUpdateFormsComponent;
@@ -1261,26 +1329,8 @@
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
             ], UserAddAndUpdateFormsComponent.prototype, "currentuserId", void 0);
             tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-            ], UserAddAndUpdateFormsComponent.prototype, "activeSort", void 0);
-            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
-            ], UserAddAndUpdateFormsComponent.prototype, "currentListChange", void 0);
-            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
-            ], UserAddAndUpdateFormsComponent.prototype, "userListChange", void 0);
-            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
-            ], UserAddAndUpdateFormsComponent.prototype, "userAgeChange", void 0);
-            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
-            ], UserAddAndUpdateFormsComponent.prototype, "userPointsChange", void 0);
-            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
-            ], UserAddAndUpdateFormsComponent.prototype, "currentUserIdChange", void 0);
-            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
-            ], UserAddAndUpdateFormsComponent.prototype, "activeSortChange", void 0);
+            ], UserAddAndUpdateFormsComponent.prototype, "outputs", void 0);
             UserAddAndUpdateFormsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: "app-user-add-and-update-forms",
@@ -1458,7 +1508,10 @@
                     if (this.currentPoint === null && this.currentAge === null) {
                         this.currentList = this.userList;
                     }
-                    this.activeSort = "id";
+                    if (this.activeSort) {
+                        this.sorting(this.activeSort);
+                    }
+                    this.redPointOn();
                 };
                 ViewsUserTableComponent.prototype.onChangeAge = function (value) {
                     value === "Возраст" ? this.currentAge = null : this.currentAge = +value;
@@ -1466,7 +1519,10 @@
                     if (this.currentPoint === null && this.currentAge === null) {
                         this.currentList = this.userList;
                     }
-                    this.activeSort = "id";
+                    if (this.activeSort) {
+                        this.sorting(this.activeSort);
+                    }
+                    this.redPointOn();
                 };
                 // Включение режима подсветки
                 ViewsUserTableComponent.prototype.redPointOn = function () {
@@ -1500,29 +1556,32 @@
                     this.activeSort = value;
                 };
                 // получение новых данных из компоненты ребенка
-                ViewsUserTableComponent.prototype.currentListChange = function (count) {
-                    this.currentList = count;
-                };
-                ViewsUserTableComponent.prototype.userListChange = function (count) {
-                    this.userList = count;
-                };
-                ViewsUserTableComponent.prototype.userAgeChange = function (count) {
-                    this.userAge = count;
+                ViewsUserTableComponent.prototype.outputsEmitterEvent = function (outputs) {
+                    if (outputs.currentListChange) {
+                        this.currentList = outputs.currentListChange;
+                    }
+                    if (outputs.userListChange) {
+                        this.userList = outputs.userListChange;
+                    }
+                    if (outputs.userAgeChange) {
+                        this.userAge = outputs.userAgeChange;
+                    }
+                    if (outputs.userPointsChange) {
+                        this.userPoints = outputs.userPointsChange;
+                    }
+                    if (outputs.currentUserIdChange) {
+                        this.currentUserId = outputs.currentUserIdChange;
+                    }
                     if (this.currentAge) {
                         this.onChangeAge("" + this.currentAge);
                     }
-                };
-                ViewsUserTableComponent.prototype.userPointsChange = function (count) {
-                    this.userPoints = count;
                     if (this.currentPoint) {
                         this.onChangePoint("" + this.currentPoint);
                     }
-                };
-                ViewsUserTableComponent.prototype.currentUserIdChange = function (count) {
-                    this.currentUserId = count;
-                };
-                ViewsUserTableComponent.prototype.activeSortChange = function (count) {
-                    this.activeSort = count;
+                    if (this.activeSort) {
+                        this.sorting(this.activeSort);
+                    }
+                    this.redPointOn();
                 };
                 return ViewsUserTableComponent;
             }());
@@ -1544,9 +1603,6 @@
             tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
             ], ViewsUserTableComponent.prototype, "currentuserId", void 0);
-            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
-            ], ViewsUserTableComponent.prototype, "activeSort", void 0);
             ViewsUserTableComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: "app-views-user-table",

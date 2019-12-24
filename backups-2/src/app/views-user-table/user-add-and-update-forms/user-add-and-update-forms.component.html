@@ -1,0 +1,98 @@
+<div class="form-add-popup">
+  <button class="dialog-button form-add-button" (click)="ViewDialogForm()">Добавить данные</button>
+</div>
+
+<div [ngClass]=" (showDialogForm) ? 'dialog' : 'dialog show' ">
+  <div class="dialog-block dialog-block-form">
+    <form [formGroup]="formsAddUser" (ngSubmit)="FormSubmit()">
+      <div class="user-inform" formGroupName="profiles">
+        <div class="user-inform__text">
+          <p>Общая информация о пользователе:</p>
+        </div>
+        <input type="text" placeholder="Введите Фамилию*" formControlName="surname" />
+        <div
+          class="error-message"
+          *ngIf ="formsAddUser.get('profiles').get('surname').invalid && formsAddUser.get('profiles').get('surname').touched"
+        >
+          <small *ngIf ="formsAddUser.get('profiles').get('surname').errors.required">Поле не может быть пустым!</small>
+          <small *ngIf ="formsAddUser.get('profiles').get('surname').errors.minlength">Слишком короткая фамилия!</small>
+        </div>
+        <input type="text" placeholder="Введите Имя*" formControlName="name" />
+        <div
+          class="error-message"
+          *ngIf ="formsAddUser.get('profiles').get('name').invalid && formsAddUser.get('profiles').get('name').touched"
+        >
+          <small *ngIf ="formsAddUser.get('profiles').get('name').errors.required">Поле не может быть пустым!</small>
+          <small *ngIf ="formsAddUser.get('profiles').get('name').errors.minlength">Слишком короткое имя!</small>
+        </div>
+        <input type="text" placeholder="Введите Отчество" formControlName="patronymic" />
+        <div
+          class="error-message"
+          *ngIf ="formsAddUser.get('profiles').get('patronymic').invalid && formsAddUser.get('profiles').get('patronymic').touched"
+        >
+          <small *ngIf ="formsAddUser.get('profiles').get('patronymic').errors.minlength">Слишком короткое отчество!</small>
+        </div>
+      </div>
+      <div
+        class="error-message"
+        *ngIf ="formsAddUser.get('profiles').invalid && formsAddUser.get('profiles').errors &&
+        ((formsAddUser.get('profiles').get('surname').touched && formsAddUser.get('profiles').get('name').touched) ||
+        (formsAddUser.get('profiles').get('patronymic').touched && formsAddUser.get('profiles').get('name').touched))"
+      >
+        <small *ngIf ="formsAddUser.get('profiles').errors.nameValid">Имя не может совпадать с фамилией или отчеством!</small>
+      </div>
+      <input type="date" formControlName="date" placeholder="ГГГГ-ММ-ДД*" />
+      <div
+        class="error-message"
+        *ngIf ="formsAddUser.get('date').invalid && formsAddUser.get('date').errors && formsAddUser.get('date').touched"
+      > <small *ngIf ="formsAddUser.get('date').errors.required">Поле не может быть пустым!</small>
+        <small *ngIf ="formsAddUser.get('date').errors.dateValid">Возраст пользователя дожен быть не менее 10 лет! </small>
+        <small *ngIf ="formsAddUser.get('date').errors.dateFormat && !formsAddUser.get('date').errors.required">Некорректный формат даты! ГГГГ-ММ-ДД</small>
+      </div>
+      <div class="user-group-and-points" formGroupName="property">
+        <div class="user-group-and-points__text">
+          <h2>Сведения о группе и успеваемости: </h2>
+        </div>
+        <div class="user-group-and-points__inputs">
+          <input type="text" placeholder="Балл" formControlName="point" />
+          <input type="text" placeholder="Группа" formControlName="group" />
+        </div>
+        <div
+          class="error-message"
+          *ngIf ="formsAddUser.get('property').get('point').invalid && formsAddUser.get('property').get('point').touched"
+        >
+          <small *ngIf ="formsAddUser.get('property').get('point').errors.pattern">Используйте только цифры 0-9 и точки</small>
+        </div>
+      </div>
+      <div class="user-contact" formGroupName="contact">
+        <div class="user-contact__text">
+          <h2>Контакты пользователя: </h2>
+        </div>
+        <div class="user-contact__inputs">
+          <input type="text" placeholder="8(800)000-00-00" formControlName="phone" />
+          <input type="email" placeholder="mail@ya.ru"formControlName="email" />
+        </div>
+        <div
+          class="error-message"
+          *ngIf ="formsAddUser.get('contact').get('phone').invalid && formsAddUser.get('contact').get('phone').touched"
+        >
+          <small *ngIf ="formsAddUser.get('contact').get('phone').errors.pattern">Вы вводите в нужном формате? 8(800)000-00-00</small>
+        </div>
+        <div
+          class="error-message"
+          *ngIf ="formsAddUser.get('contact').get('email').invalid && formsAddUser.get('contact').get('email').touched"
+        >
+          <small *ngIf ="formsAddUser.get('contact').get('email').errors.email">Некорректный e-mail!</small>
+        </div>
+        <textarea placeholder="Адрес" formControlName="adres"></textarea>
+      </div>
+      <div class="user-send">
+        <button *ngIf="formsAddUser.invalid" type="button" class="dialog-button dialog-button-form dialog-button-add invalid-button">
+          Что-то пошло не так... </button>
+        <button *ngIf="!formsAddUser.invalid" type="submit" class="dialog-button dialog-button-form dialog-button-add">
+          Сохранить данные</button>
+        <button type="button" (click)=showDialogueForm() class="dialog-button dialog-button-form">Закрыть</button>
+      </div>
+    </form>
+  </div>
+</div>

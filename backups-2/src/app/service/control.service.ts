@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { FormControl, FormGroup, ValidatorFn } from "@angular/forms";
+import { FormGroup } from "@angular/forms";
 import { TestData } from "../data/test-data";
 import { Contact } from "../model/contact";
 import { User } from "../model/user";
