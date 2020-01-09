@@ -19,6 +19,7 @@
     2. 04/12/19 / [Задание - 13](http://test.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/13) / Реализовать формы с валидацией для добавления и реадктирования пользователей
     3. 09/12/19 / [Задание - 14.1](http://test.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/14-1) / разбить проект на компоненты использую Input и Output
     4. 09/12/19 / [Задание - 14.2](http://test.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/14-2) / Реализовать @Directive, реализовать @Pipe, сделать все компоненты onPush, выделить хотя бы 1 функциональный модуль
+    5& 01/01/20 / Задание - 15 (демо-версия отсутствует) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/15) / Добавить бэкенд часть, роутинг и фабрику в свой проект
 
     
 # Contact
