@@ -23,10 +23,10 @@ function randomStr (minValue ,maxValue){
 //Фунция заменяющая тег li с номером "JellyNumber" в разметке
 function stringRepalce (jellyNumber){
   var newStr = document.createElement("li");
-  var randomAnswerNumber = randomStr(1,13); //вопрос - почему ниже получилось функцией length посчитать длинну объекта - а для этого объекта это не сработало
+  var randomAnswerNumber = randomStr(1,13);
   newStr.innerHTML = jellyAnswer[randomAnswerNumber];
   var parent = document.getElementsByTagName("ul")[jellyNumber];
-  parent.replaceChild(newStr, parent.childNodes[3]); //вопрос - почему такая мистика с номером списка? если выбрать 2-ой тег как положенно, тег не заменяется а добавляется 3-им в список
+  parent.replaceChild(newStr, parent.childNodes[3]);
 
 //Фунция вешает слушалку на i элемент объекта obj
 }
@@ -38,33 +38,12 @@ function listenerCreate(obj , i){
 }
 
 //MAIN
-alert ('Привет! Задавай вопрос предполагающий простой ответ (Да / Нет), и тыкай по бобам - они подскажут что делать с: ');
-function ready (){
-  var jellyClick = document.querySelectorAll("a.jelly__elem");
+function ready() {
+  alert ('Привет! Задавай вопрос предполагающий простой ответ (Да / Нет), и тыкай по бобам - они подскажут что делать с: ');
+  var jellyClick =  document.querySelectorAll("a.jelly__elem");
   for (let i = 0; i < jellyClick.length; i++){
     listenerCreate(jellyClick , i)
   }
 }
 
 document.addEventListener("DOMContentLoaded", ready);
-
-
-
-
-//Попытка сделать считывание значений из файла txt на сервер, в разработке так как её можно использовать только при вызове файла лежащего на том же сервере что и проект
-/*function readerFiles (fileName){
-  var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", fileName, false);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var allText = rawFile.responseText;
-                alert(allText);
-            }
-        }
-    }
-    rawFile.send(null);
-}*/
