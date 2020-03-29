@@ -74,13 +74,10 @@ html{
   min-width:  300px;
 }
 body{
-  background-image: url("http://fo-ox.site/Img/bg.jpg");
+  background-image: url("https://fo-ox.site/jelly/Img/bg.jpg");
   background-repeat: no-repeat;
   height : 100vh;
   background-size: cover;
-}
-.jelly {
-  display:flex;
 }
 .jelly img{
   position: relative;
@@ -109,7 +106,6 @@ body{
   background-color: rgba(0,0,0,0.8);
   border : 2px solid white;
   border-radius : 5px;
-  flex-direction: column;
 }
 
 .jelly__tab::after{
@@ -144,7 +140,6 @@ border-bottom: 7px solid #000;
   position : absolute;
   left: calc(50% - 175px);
   top : calc(50% - 85px);
-  display: flex;
 }
 
 
