@@ -23,4 +23,4 @@
 
 
 # Contact
-[behance - portfolio](https://www.behance.net/roganova0l482c)/ email: roganova.0lga@yandex.ru
+[behance - portfolio](https://www.behance.net/roganova0l482c) / [vk](https://vk.com/mekgirl) / email: roganova.0lga@yandex.ru
