@@ -13,14 +13,14 @@
     7. 11/11/19 / [Задание - 9](https://codepen.io/fo_ox/pen/QWWVgrv) / Реализация ручного наследования на классах
     8. 13/11/19 / [Задание - 10](https://fo-ox.github.io/10/) / Промисы и асинхронность
 3. TypeScript
-    1. 25/11/19 / [Задание - 11](http://m.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/11) / Реализовать бинарное дерево поиска
+    1. 25/11/19 / [Задание - 11](https://fo-ox.site/binary-tree) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/11) / Реализовать бинарное дерево поиска
 4. Anjular
-    1. 02/12/19 / [Задание - 12](http://test.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/12) / Реализовать интефейс таблицы через Anjular привязки
-    2. 04/12/19 / [Задание - 13](http://test.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/13) / Реализовать формы с валидацией для добавления и реадктирования пользователей
-    3. 09/12/19 / [Задание - 14.1](http://test.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/14-1) / разбить проект на компоненты использую Input и Output
-    4. 09/12/19 / [Задание - 14.2](http://test.fo-ox.site) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/14-2) / Реализовать @Directive, реализовать @Pipe, сделать все компоненты onPush, выделить хотя бы 1 функциональный модуль
-    5. 01/01/20 / Задание - 15 (демо-версия отсутствует) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/15) / Добавить бэкенд часть, роутинг и фабрику в свой проект
+    1. 02/12/19 / [Задание - 12](http://tree.fo-ox.site/?debug=%22debug%22) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/12) / Реализовать интефейс таблицы через Anjular привязки
+    2. 04/12/19 / [Задание - 13](http://tree.fo-ox.site/?debug=%22debug%22) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/13) / Реализовать формы с валидацией для добавления и реадктирования пользователей
+    3. 09/12/19 / [Задание - 14.1](http://tree.fo-ox.site/?debug=%22debug%22) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/14-1) / разбить проект на компоненты использую Input и Output
+    4. 09/12/19 / [Задание - 14.2](http://tree.fo-ox.site/?debug=%22debug%22) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/14-2) / Реализовать @Directive, реализовать @Pipe, сделать все компоненты onPush, выделить хотя бы 1 функциональный модуль
+    5. 01/01/20 / [Задание - 15](http://tree.fo-ox.site/?debug=%22debug%22) / [Git](https://github.com/Fo-ox/fo-ox.github.io/tree/master/15) / Добавить бэкенд часть, роутинг и фабрику в свой проект
 
-    
+
 # Contact
-[behance](https://www.behance.net/roganova0l482c) / [vk](https://vk.com/public_hlg)
+[behance - portfolio](https://www.behance.net/roganova0l482c)/ email: roganova.0lga@yandex.ru
